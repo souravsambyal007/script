@@ -1,0 +1,28 @@
+package Project1;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Count_Checkboxes {
+
+	public void count()
+	{
+		WebDriver driver=new FirefoxDriver();
+		driver.get("http://facebook.com");
+		driver.manage().window().maximize();
+		
+		List<WebElement> boxes=
+				driver.findElements(By.xpath("//input[@type='checkbox']"));
+		System.out.println(boxes.size()+"Number of check boxes present in the page");
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Count_Checkboxes oo=new Count_Checkboxes();
+        oo.count();
+	}
+
+}
